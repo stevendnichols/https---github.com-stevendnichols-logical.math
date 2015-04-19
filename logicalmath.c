@@ -7,3 +7,9 @@ int add(int m, int n)
    }
    return m^n;
 }
+
+int equals(int m, int n)
+{
+   return !(m^n); 
+}
+
