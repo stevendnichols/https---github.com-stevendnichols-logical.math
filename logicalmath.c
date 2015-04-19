@@ -19,3 +19,30 @@ int equal(int m, int n)
    return !(m^n); 
 }
 
+int notEqual(int m, int n)
+{
+   return m^n;
+}
+
+int greaterThan(int m, int n)
+{
+  unsigned int s = INT_HIGH_BIT;
+  int x = m & s, y = n & s;
+  if(x ^ y) {
+    return y;      
+  }
+  s>>=1;
+  while(s) {
+      if((m ^ n) & s) {
+          return m & s;
+      }
+      s>>=1;
+  }
+  return 0;
+}
+
+int lesserThan(int m, int n)
+{
+   return greaterThan(n, m);
+}
+
