@@ -14,6 +14,26 @@ int add(int m, int n)
    return m^n;
 }
 
+int negative(int n)
+{
+   return add(~n, 1);
+}
+
+int subtract(int m, int n)
+{
+   return add(m, negative(n));
+}
+
+int increment(int n)
+{
+   return add(n, 1);
+}
+
+int decrement(n)
+{
+   return add(n, negative(1));
+}
+
 int equal(int m, int n)
 {
    return !(m^n); 
